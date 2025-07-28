@@ -34,7 +34,7 @@
     }
 }
 
-public class ItemManager: IItemManager<string>
+public class ItemManager : IItemManager<string>
 {
     private List<string> items = new List<string>();
 
@@ -55,7 +55,7 @@ public class ItemManager: IItemManager<string>
     // TODO: Implement this method
     public void RemoveItem(string item)
     {
-        items.Remove(item); 
+        items.Remove(item);
     }
 
     public void ClearAllItems()
