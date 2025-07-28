@@ -34,7 +34,7 @@
     }
 }
 
-public class ItemManager
+public class ItemManager: IItemManager<string>
 {
     private List<string> items = new List<string>();
 
@@ -64,7 +64,7 @@ public class ItemManager
     }
 }
 
-public class ItemManager<T>
+public class ItemManager<T> : IItemManager<T>
 {
     private List<T> items = new List<T>();
 
@@ -81,10 +81,23 @@ public class ItemManager<T>
         }
     }
 
+    public void RemoveItem(T item)
+    {
+        items.Remove(item);
+    }
+
     public void ClearAllItems()
     {
         items = [];
     }
+}
+
+public interface IItemManager<T>
+{
+    void AddItem(T item);
+    void RemoveItem(T item);
+    void PrintAllItems();
+    void ClearAllItems();
 }
 
 public class Fruit
